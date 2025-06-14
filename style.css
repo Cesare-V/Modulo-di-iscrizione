@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Norse:wght@400&family=Roboto:wght@300;400;700&display=swap'); 
+
+:root {
+    --primary-green: #388E3C; /* Colore verde scuro per il contrasto */
+    --light-grey: #f4f4f4;
+    --dark-grey: #333;
+    --border-color: #E0E0E0;
+    --error-color: #D32F2F; /* Colore rosso per gli errori */
+}
+
+/* Stili generali */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Font di base */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+}
+
+.container {
+    display: flex;
+    width: 90%; /* Larghezza complessiva del contenitore */
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Per arrotondare gli angoli delle sezioni interne */
+}
+
+/* Sezione Immagine */
+.image-section {
+    flex: 1; /* Occupa metà dello spazio disponibile */
+    background-image: url('../Modulo-di-iscrizione/image/Foglie.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white; /* Testo bianco sull'immagine */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    min-width: 300px; /* Larghezza minima per la sezione immagine */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px; /* Spostato più in basso come nell'esempio */
+    background-color: rgba(0, 0, 0, 0.4); /* Sfondo semi-trasparente per il logo */
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.logo img {
+    height: 50px; /* Dimensione del logo */
+    width: auto;
+}
+
+.logo h1 {
+    font-family: 'Norse', sans-serif; /* Applica il font Norse al titolo */
+    font-size: 3em;
+    margin: 0;
+}
+
+.photo-credit {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+/* Sezione Modulo */
+.form-section {
+    flex: 2; /* Occupa più spazio dell'immagine */
+    background-color: white;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-text {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.header-text p:last-child {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.highlight {
+    color: var(--primary-green); /* Colore per evidenziare "now" */
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spazio tra le righe del modulo */
+    padding: 20px;
+    background-color: var(--light-grey);
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: 40px; /* Spazio tra i due campi sulla stessa riga */
+    flex-wrap: wrap; /* Permette ai campi di andare a capo su schermi piccoli */
+}
+
+.input-group {
+    flex: 1; /* Ogni gruppo occupa la metà dello spazio disponibile */
+    display: flex;
+    flex-direction: column;
+    min-width: 250px; /* Larghezza minima per i campi input */
+}
+
+label {
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--dark-grey);
+    letter-spacing: 0.1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.2); /* Ombra verde al focus */
+}
+
+/* Stile per i campi con errore (es. password non corrispondenti) */
+input.error {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    align-self: flex-start; /* Allinea il bottone a sinistra */
+}
+
+button[type="submit"]:hover {
+    background-color: #2e7d32; /* Tonalità più scura al passaggio del mouse */
+    transform: translateY(-2px);
+}
+
+.login-link {
+    margin-top: 30px;
+    font-size: 0.95em;
+}
+
+.login-link a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries per la responsività */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Impila le sezioni verticalmente */
+        width: 100%;
+        max-width: 600px; /* Larghezza massima per layout a colonna */
+    }
+
+    .image-section {
+        min-height: 250px; /* Altezza fissa per l'immagine sui dispositivi più piccoli */
+        min-width: unset; /* Rimuovi la larghezza minima */
+    }
+
+    .logo {
+        margin-top: 20px;
+    }
+
+    .form-section {
+        padding: 30px 20px; /* Riduci il padding */
+    }
+
+    .form-row {
+        flex-direction: column; /* Impila i campi input verticalmente */
+        gap: 20px; /* Riduci lo spazio */
+    }
+
+    .input-group {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-section {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    button[type="submit"] {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
